@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  jupyter:
+    build: .
+    command: poetry run jupyter lab --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+    volumes:
+      - .:/code
+    ports:
+      - "8888:8888"
